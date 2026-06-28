@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대장내시경 장청결제 복용 안내</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="loading" class="loading">안내문을 불러오는 중입니다...</div>
+        
+        <div id="screen-container" class="screen-container hidden">
+            <!-- Wrapper to keep overlays aligned with canvas -->
+            <div id="canvas-wrapper">
+                <canvas id="pdf-canvas"></canvas>
+                
+                <!-- Overlay for Screen 1 & 2: Click anywhere to go next -->
+                <div id="full-overlay" class="overlay hidden" onclick="goNext()">
+                    <div class="tap-hint" id="tap-hint-text">화면을 터치하여 다음으로 넘어가세요</div>
+                </div>
+                
+                <!-- Overlay for Screen 3: Click medicine -->
+                <div id="med-overlay" class="overlay hidden">
+                    <!-- 4 Rows of medicines based on the PDF layout -->
+                    <div class="clickable-row" style="top: 32%; height: 16%;" onclick="showPage(4)"></div> <!-- 하프렙 -->
+                    <div class="clickable-row" style="top: 49%; height: 16%;" onclick="showPage(5)"></div> <!-- 플렌뷰 -->
+                    <div class="clickable-row" style="top: 66%; height: 16%;" onclick="showPage(6)"></div> <!-- 수프렙 -->
+                    <div class="clickable-row" style="top: 83%; height: 16%;" onclick="showPage(7)"></div> <!-- 원프렙 -->
+                </div>
+            </div>
+
+            <!-- Back button for medicine detail pages -->
+            <button id="back-btn" class="back-btn hidden" onclick="showPage(3)">← 뒤로가기</button>
+            
+            <!-- Button to see bowel pattern -->
+            <button id="bowel-btn" class="bowel-btn hidden" onclick="showPage(8)">대변 양상 확인하기 →</button>
+        </div>
+    </div>
+    <script src="pdf-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

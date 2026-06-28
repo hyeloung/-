@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000; /* Dark background to blend with edges if any */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden; /* Prevent body scroll */
+}
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.screen-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow-y: auto; /* Allow vertical scroll */
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+#canvas-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#pdf-canvas {
+    width: 100%;
+    height: auto;
+    display: block; /* Removes bottom spacing */
+}
+
+.hidden {
+    display: none !important;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#full-overlay {
+    cursor: pointer;
+}
+
+.tap-hint {
+    position: fixed; /* Fixed to screen bottom */
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+    pointer-events: none;
+    z-index: 20;
+    white-space: nowrap;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(0,0,0,0); }
+    50% { opacity: 1; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+}
+
+.clickable-row {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: rgba(59, 130, 246, 0.0); /* Set to >0 to debug positions */
+    cursor: pointer;
+}
+
+.clickable-row:hover {
+    background: rgba(59, 130, 246, 0.15); /* Slight highlight on hover */
+}
+
+.back-btn {
+    position: fixed;
+    top: 2%;
+    left: 5%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 30;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+}
+
+.back-btn:hover {
+    background: #f1f5f9;
+}
+
+.bowel-btn {
+    position: fixed;
+    bottom: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #3b82f6;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 30;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    animation: bounce 2s infinite;
+    white-space: nowrap;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, -10px); }
+}
