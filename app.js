@@ -73,7 +73,7 @@ function renderPage(num) {
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.remove('hidden');
 
-                const LOCAL_CUT = 0.74; // Deep cut to hide the original 3 lines of text
+                const LOCAL_CUT = 0.78; // Deep cut to hide the original 3 lines of text completely
                 // Show bottom portion but crop the bottom edge, and shift Y position
                 wrapper.style.height = (cssHeight * (1 - LOCAL_CUT - BOTTOM_CROP_RATIO)) + 'px';
                 canvas.style.marginTop = `-${cssHeight * LOCAL_CUT}px`;
