@@ -32,7 +32,7 @@ function renderPage(num) {
         // Zoom in specifically for the bowel pattern page to make it readable and cut white margins
         if (num === 16) {
             // Zoom more on mobile, slightly on desktop
-            const zoomFactor = container.clientWidth < 768 ? 1.3 : 1.1;
+            const zoomFactor = container.clientWidth < 768 ? 1.4 : 1.1;
             scale = scale * zoomFactor;
         }
         
