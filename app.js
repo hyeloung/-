@@ -32,7 +32,7 @@ function renderPage(num) {
         // Zoom in specifically for the bowel pattern page to make it readable and cut white margins
         if (num === 16) {
             // Zoom more on mobile, slightly on desktop
-            const zoomFactor = container.clientWidth < 768 ? 1.45 : 1.2;
+            const zoomFactor = container.clientWidth < 768 ? 1.3 : 1.1;
             scale = scale * zoomFactor;
         }
         
@@ -63,6 +63,7 @@ function renderPage(num) {
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
                 canvas.style.marginLeft = '0px';
+                canvas.style.width = '100%';
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
@@ -73,6 +74,8 @@ function renderPage(num) {
                 
                 // Center the zoomed-in canvas horizontally to crop side margins
                 const cssWidth = viewport.width / (window.devicePixelRatio || 1);
+                canvas.style.width = cssWidth + 'px';
+                
                 const overflowX = cssWidth - container.clientWidth;
                 if (overflowX > 0) {
                     canvas.style.marginLeft = `-${overflowX / 2}px`;
@@ -98,6 +101,7 @@ function renderPage(num) {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
                 canvas.style.marginLeft = '0px';
+                canvas.style.width = '100%';
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
