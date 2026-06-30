@@ -48,15 +48,17 @@ function renderPage(num) {
             const CUT_RATIO = 0.66; 
             // Adjust this ratio to crop the bottom edge (e.g. ~2cm)
             const BOTTOM_CROP_RATIO = 0.08; 
+            // Adjust this to shift the content down slightly (e.g. ~0.5cm)
+            const SHIFT_DOWN_RATIO = 0.02;
 
             if (num === 2) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
             } else if (num === 16) {
-                // Show bottom portion but crop the bottom edge
+                // Show bottom portion but crop the bottom edge, and shift down
                 wrapper.style.height = (cssHeight * (1 - CUT_RATIO - BOTTOM_CROP_RATIO)) + 'px';
-                canvas.style.marginTop = `-${cssHeight * CUT_RATIO}px`;
+                canvas.style.marginTop = `-${cssHeight * (CUT_RATIO - SHIFT_DOWN_RATIO)}px`;
             } else {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
