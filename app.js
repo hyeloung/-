@@ -55,13 +55,34 @@ function renderPage(num) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
+                container.style.backgroundColor = '#fff';
+                const contactInfo = document.getElementById('contact-info');
+                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
             } else if (num === 16) {
                 // Show bottom portion but crop the bottom edge, and shift Y position
                 wrapper.style.height = (cssHeight * (1 - CUT_RATIO - BOTTOM_CROP_RATIO)) + 'px';
                 canvas.style.marginTop = `-${cssHeight * (CUT_RATIO - SHIFT_Y_RATIO)}px`;
+                
+                // Dynamically sample the background color from the PDF to blend seamlessly!
+                setTimeout(() => {
+                    try {
+                        const sampleY = Math.floor(viewport.height * 0.93);
+                        const sampleX = Math.floor(viewport.width * 0.1); // Sample near the left edge to avoid text/images
+                        const pixel = ctx.getImageData(sampleX, sampleY, 1, 1).data;
+                        const bgColor = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+                        container.style.backgroundColor = bgColor;
+                        const contactInfo = document.getElementById('contact-info');
+                        if (contactInfo) contactInfo.style.backgroundColor = bgColor;
+                    } catch(e) {
+                        console.error('Could not sample color', e);
+                    }
+                }, 100);
             } else {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
+                container.style.backgroundColor = '#fff';
+                const contactInfo = document.getElementById('contact-info');
+                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
             }
         });
         
