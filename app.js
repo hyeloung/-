@@ -19,7 +19,7 @@ pdfjsLib.getDocument({data: pdfData}).promise.then(pdf => {
 });
 
 function renderPage(num) {
-    const pdfPageNum = num;
+    const pdfPageNum = num === 16 ? 2 : num;
 
     pdfDoc.getPage(pdfPageNum).then(page => {
         // Calculate scale to fit canvas width to container width
@@ -51,6 +51,10 @@ function renderPage(num) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
+            } else if (num === 16) {
+                // Show bottom portion
+                wrapper.style.height = (cssHeight * (1 - CUT_RATIO)) + 'px';
+                canvas.style.marginTop = `-${cssHeight * CUT_RATIO}px`;
             } else {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
@@ -81,7 +85,11 @@ function updateOverlays(pageObjNum) {
         medOverlay.classList.remove('hidden');
     } else if (pageObjNum >= 4 && pageObjNum <= 15) {
         backBtn.classList.remove('hidden');
-        if (bowelBtn) bowelBtn.classList.add('hidden'); // hidden for now since page 8 was bowel page
+        fullOverlay.classList.remove('hidden');
+        if (tapHintText) tapHintText.innerText = '화면을 터치하여 대변 양상 확인하기';
+    } else if (pageObjNum === 16) {
+        fullOverlay.classList.remove('hidden');
+        if (tapHintText) tapHintText.innerText = '화면을 터치하면 처음으로 돌아갑니다';
     }
 }
 
@@ -97,5 +105,9 @@ function goNext() {
         showPage(2);
     } else if (currentPage === 2) {
         showPage(3);
+    } else if (currentPage >= 4 && currentPage <= 15) {
+        showPage(16);
+    } else if (currentPage === 16) {
+        showPage(1);
     }
 }
