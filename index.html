@@ -23,11 +23,23 @@
                 
                 <!-- Overlay for Screen 3: Click medicine -->
                 <div id="med-overlay" class="overlay hidden">
-                    <!-- 4 Rows of medicines based on the PDF layout -->
-                    <div class="clickable-row" style="top: 32%; height: 16%;" onclick="showPage(4)"></div> <!-- 하프렙 -->
-                    <div class="clickable-row" style="top: 49%; height: 16%;" onclick="showPage(5)"></div> <!-- 플렌뷰 -->
-                    <div class="clickable-row" style="top: 66%; height: 16%;" onclick="showPage(6)"></div> <!-- 수프렙 -->
-                    <div class="clickable-row" style="top: 83%; height: 16%;" onclick="showPage(7)"></div> <!-- 원프렙 -->
+                    <!-- 4 Rows x 3 Columns of medicines -->
+                    <!-- 하프렙 (Row 1) -->
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(4)"></div>
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(8)"></div>
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(12)"></div>
+                    <!-- 플렌뷰 (Row 2) -->
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(5)"></div>
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(9)"></div>
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(13)"></div>
+                    <!-- 수프렙 (Row 3) -->
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(6)"></div>
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(10)"></div>
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(14)"></div>
+                    <!-- 원프렙 (Row 4) -->
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(7)"></div>
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(11)"></div>
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(15)"></div>
                 </div>
             </div>
 

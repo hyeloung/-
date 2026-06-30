@@ -19,7 +19,7 @@ pdfjsLib.getDocument({data: pdfData}).promise.then(pdf => {
 });
 
 function renderPage(num) {
-    const pdfPageNum = num === 8 ? 2 : num;
+    const pdfPageNum = num;
 
     pdfDoc.getPage(pdfPageNum).then(page => {
         // Calculate scale to fit canvas width to container width
@@ -51,10 +51,6 @@ function renderPage(num) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
-            } else if (num === 8) {
-                // Show bottom portion
-                wrapper.style.height = (cssHeight * (1 - CUT_RATIO)) + 'px';
-                canvas.style.marginTop = `-${cssHeight * CUT_RATIO}px`;
             } else {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
@@ -83,12 +79,9 @@ function updateOverlays(pageObjNum) {
         if (tapHintText) tapHintText.innerText = '화면을 터치하여 다음으로 넘어가세요';
     } else if (pageObjNum === 3) {
         medOverlay.classList.remove('hidden');
-    } else if (pageObjNum >= 4 && pageObjNum <= 7) {
+    } else if (pageObjNum >= 4 && pageObjNum <= 15) {
         backBtn.classList.remove('hidden');
-        if (bowelBtn) bowelBtn.classList.remove('hidden');
-    } else if (pageObjNum === 8) {
-        fullOverlay.classList.remove('hidden');
-        if (tapHintText) tapHintText.innerText = '화면을 터치하면 처음으로 돌아갑니다';
+        if (bowelBtn) bowelBtn.classList.add('hidden'); // hidden for now since page 8 was bowel page
     }
 }
 
@@ -104,7 +97,5 @@ function goNext() {
         showPage(2);
     } else if (currentPage === 2) {
         showPage(3);
-    } else if (currentPage === 8) {
-        showPage(1);
     }
 }
