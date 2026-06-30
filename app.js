@@ -26,8 +26,15 @@ function renderPage(num) {
         const container = document.getElementById('screen-container');
         const viewportUnscaled = page.getViewport({ scale: 1 });
         
-        // Scale only based on width to fill the screen horizontally
-        const scale = container.clientWidth / viewportUnscaled.width;
+        // Scale based on width to fill the screen horizontally
+        let scale = container.clientWidth / viewportUnscaled.width;
+        
+        // Zoom in specifically for the bowel pattern page to make it readable and cut white margins
+        if (num === 16) {
+            // Zoom more on mobile, slightly on desktop
+            const zoomFactor = container.clientWidth < 768 ? 1.45 : 1.2;
+            scale = scale * zoomFactor;
+        }
         
         // Increase scale for better resolution on high DPI screens
         const renderScale = scale * (window.devicePixelRatio || 1);
@@ -55,6 +62,7 @@ function renderPage(num) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
+                canvas.style.marginLeft = '0px';
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
@@ -62,6 +70,15 @@ function renderPage(num) {
                 // Show bottom portion but crop the bottom edge, and shift Y position
                 wrapper.style.height = (cssHeight * (1 - CUT_RATIO - BOTTOM_CROP_RATIO)) + 'px';
                 canvas.style.marginTop = `-${cssHeight * (CUT_RATIO - SHIFT_Y_RATIO)}px`;
+                
+                // Center the zoomed-in canvas horizontally to crop side margins
+                const cssWidth = viewport.width / (window.devicePixelRatio || 1);
+                const overflowX = cssWidth - container.clientWidth;
+                if (overflowX > 0) {
+                    canvas.style.marginLeft = `-${overflowX / 2}px`;
+                } else {
+                    canvas.style.marginLeft = '0px';
+                }
                 
                 // Dynamically sample the background color from the PDF to blend seamlessly!
                 setTimeout(() => {
@@ -80,6 +97,7 @@ function renderPage(num) {
             } else {
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
+                canvas.style.marginLeft = '0px';
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
