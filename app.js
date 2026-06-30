@@ -46,14 +46,16 @@ function renderPage(num) {
 
             // Adjust this ratio to perfectly split above "마지막으로 대변 양상 확인해주세요."
             const CUT_RATIO = 0.66; 
+            // Adjust this ratio to crop the bottom edge (e.g. ~2cm)
+            const BOTTOM_CROP_RATIO = 0.08; 
 
             if (num === 2) {
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
             } else if (num === 16) {
-                // Show bottom portion
-                wrapper.style.height = (cssHeight * (1 - CUT_RATIO)) + 'px';
+                // Show bottom portion but crop the bottom edge
+                wrapper.style.height = (cssHeight * (1 - CUT_RATIO - BOTTOM_CROP_RATIO)) + 'px';
                 canvas.style.marginTop = `-${cssHeight * CUT_RATIO}px`;
             } else {
                 wrapper.style.height = cssHeight + 'px';
