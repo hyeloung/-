@@ -144,3 +144,26 @@ body {
     0%, 100% { transform: translate(-50%, 0); }
     50% { transform: translate(-50%, -10px); }
 }
+
+.contact-info {
+    text-align: center;
+    padding: 20px 15px;
+    margin: 15px 20px 80px 20px; /* Extra bottom margin to prevent tap-hint overlap */
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    color: #334155;
+    line-height: 1.5;
+    z-index: 20;
+    word-break: keep-all;
+}
+
+.phone-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 1.3rem;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 800;
+}

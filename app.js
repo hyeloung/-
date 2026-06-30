@@ -76,11 +76,13 @@ function updateOverlays(pageObjNum) {
     const backBtn = document.getElementById('back-btn');
     const bowelBtn = document.getElementById('bowel-btn');
     const tapHintText = document.getElementById('tap-hint-text');
+    const contactInfo = document.getElementById('contact-info');
 
     fullOverlay.classList.add('hidden');
     medOverlay.classList.add('hidden');
     backBtn.classList.add('hidden');
     if (bowelBtn) bowelBtn.classList.add('hidden');
+    if (contactInfo) contactInfo.classList.add('hidden');
 
     if (pageObjNum === 1 || pageObjNum === 2) {
         fullOverlay.classList.remove('hidden');
@@ -94,6 +96,7 @@ function updateOverlays(pageObjNum) {
     } else if (pageObjNum === 16) {
         fullOverlay.classList.remove('hidden');
         if (tapHintText) tapHintText.innerText = '화면을 터치하면 처음으로 돌아갑니다';
+        if (contactInfo) contactInfo.classList.remove('hidden');
     }
 }
 
