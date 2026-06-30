@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대장내시경 장청결제 복용 안내</title>
-    <link rel="stylesheet" href="style.css?v=11">
+    <link rel="stylesheet" href="style.css?v=12">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
@@ -12,6 +12,13 @@
         <div id="loading" class="loading">안내문을 불러오는 중입니다...</div>
         
         <div id="screen-container" class="screen-container hidden">
+            <!-- Dynamic Custom Heading for page 16 -->
+            <div id="bowel-heading" class="bowel-heading hidden">
+                정확한 검사를 위해서는 장을 깨끗이 비우는 것이 매우 중요합니다.<br>
+                대장약 복용후 대변에 찌꺼기가 보이지 않더라도,<br>
+                약은 안내받은 용량과 시간에 맞춰 끝까지 복용하셔야 합니다.
+            </div>
+
             <!-- Wrapper to keep overlays aligned with canvas -->
             <div id="canvas-wrapper">
                 <canvas id="pdf-canvas"></canvas>
@@ -56,7 +63,7 @@
             <button id="bowel-btn" class="bowel-btn hidden" onclick="showPage(8)">대변 양상 확인하기 →</button>
         </div>
     </div>
-    <script src="pdf-data.js?v=11"></script>
-    <script src="app.js?v=11"></script>
+    <script src="pdf-data.js?v=12"></script>
+    <script src="app.js?v=12"></script>
 </body>
 </html>

@@ -67,10 +67,16 @@ function renderPage(num) {
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                const bowelHeading = document.getElementById('bowel-heading');
+                if (bowelHeading) bowelHeading.classList.add('hidden');
             } else if (num === 16) {
+                const bowelHeading = document.getElementById('bowel-heading');
+                if (bowelHeading) bowelHeading.classList.remove('hidden');
+
+                const LOCAL_CUT = 0.74; // Deep cut to hide the original 3 lines of text
                 // Show bottom portion but crop the bottom edge, and shift Y position
-                wrapper.style.height = (cssHeight * (1 - CUT_RATIO - BOTTOM_CROP_RATIO)) + 'px';
-                canvas.style.marginTop = `-${cssHeight * (CUT_RATIO - SHIFT_Y_RATIO)}px`;
+                wrapper.style.height = (cssHeight * (1 - LOCAL_CUT - BOTTOM_CROP_RATIO)) + 'px';
+                canvas.style.marginTop = `-${cssHeight * LOCAL_CUT}px`;
                 
                 // Center the zoomed-in canvas horizontally to crop side margins
                 const cssWidth = viewport.width / (window.devicePixelRatio || 1);
@@ -105,6 +111,8 @@ function renderPage(num) {
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                const bowelHeading = document.getElementById('bowel-heading');
+                if (bowelHeading) bowelHeading.classList.add('hidden');
             }
         });
         
