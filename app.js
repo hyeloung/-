@@ -117,7 +117,7 @@ function renderPage(num) {
         });
         
         // Scroll to top when page changes
-        container.scrollTo(0, 0);
+        window.scrollTo(0, 0);
     });
 }
 
