@@ -62,6 +62,8 @@ function renderPage(num) {
                 canvas.classList.add('hidden');
                 const page2Img = document.getElementById('page2-img');
                 if (page2Img) page2Img.classList.add('hidden');
+                const page4Img = document.getElementById('page4-img');
+                if (page4Img) page4Img.classList.add('hidden');
                 const page1Img = document.getElementById('page1-img');
                 if (page1Img) page1Img.classList.remove('hidden');
                 wrapper.style.height = 'auto';
@@ -74,8 +76,24 @@ function renderPage(num) {
                 canvas.classList.add('hidden');
                 const page1Img = document.getElementById('page1-img');
                 if (page1Img) page1Img.classList.add('hidden');
+                const page4Img = document.getElementById('page4-img');
+                if (page4Img) page4Img.classList.add('hidden');
                 const page2Img = document.getElementById('page2-img');
                 if (page2Img) page2Img.classList.remove('hidden');
+                wrapper.style.height = 'auto';
+                container.style.backgroundColor = '#fff';
+                const contactInfo = document.getElementById('contact-info');
+                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                const bowelHeading = document.getElementById('bowel-heading');
+                if (bowelHeading) bowelHeading.classList.add('hidden');
+            } else if (num === 4) {
+                canvas.classList.add('hidden');
+                const page1Img = document.getElementById('page1-img');
+                if (page1Img) page1Img.classList.add('hidden');
+                const page2Img = document.getElementById('page2-img');
+                if (page2Img) page2Img.classList.add('hidden');
+                const page4Img = document.getElementById('page4-img');
+                if (page4Img) page4Img.classList.remove('hidden');
                 wrapper.style.height = 'auto';
                 container.style.backgroundColor = '#fff';
                 const contactInfo = document.getElementById('contact-info');
@@ -88,6 +106,8 @@ function renderPage(num) {
                 if (page1Img) page1Img.classList.add('hidden');
                 const page2Img = document.getElementById('page2-img');
                 if (page2Img) page2Img.classList.add('hidden');
+                const page4Img = document.getElementById('page4-img');
+                if (page4Img) page4Img.classList.add('hidden');
                 
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.remove('hidden');
@@ -128,6 +148,8 @@ function renderPage(num) {
                 if (page1Img) page1Img.classList.add('hidden');
                 const page2Img = document.getElementById('page2-img');
                 if (page2Img) page2Img.classList.add('hidden');
+                const page4Img = document.getElementById('page4-img');
+                if (page4Img) page4Img.classList.add('hidden');
                 
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
