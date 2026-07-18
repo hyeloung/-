@@ -64,12 +64,29 @@ function renderPage(num) {
                 canvas.style.marginTop = '0px';
                 canvas.style.marginLeft = '0px';
                 canvas.style.width = '100%';
-                container.style.backgroundColor = '#fff';
+                
+                const page2Text = document.getElementById('page2-text');
+                if (page2Text) page2Text.classList.remove('hidden');
+
                 const contactInfo = document.getElementById('contact-info');
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
+                
+                // Dynamically sample the background color from the PDF to match
+                setTimeout(() => {
+                    try {
+                        // Sample near the top left to get the light blue background
+                        const pixel = ctx.getImageData(10, 10, 1, 1).data;
+                        const bgColor = `rgb(${pixel[0]}, ${pixel[1]}, ${pixel[2]})`;
+                        container.style.backgroundColor = bgColor;
+                        if (page2Text) page2Text.style.backgroundColor = bgColor;
+                    } catch(e) {}
+                }, 100);
             } else if (num === 16) {
+                const page2Text = document.getElementById('page2-text');
+                if (page2Text) page2Text.classList.add('hidden');
+                
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.remove('hidden');
 
@@ -113,6 +130,8 @@ function renderPage(num) {
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
+                const page2Text = document.getElementById('page2-text');
+                if (page2Text) page2Text.classList.add('hidden');
             }
         });
         
