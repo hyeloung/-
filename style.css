@@ -7,7 +7,6 @@
 body {
     background-color: #000; /* Dark background to blend with edges if any */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    overflow: hidden; /* Prevent body scroll */
 }
 
 #app {
@@ -15,7 +14,7 @@ body {
     height: 100vh;
     background-color: #fff;
     position: relative;
-    overflow: hidden;
+    /* Removed overflow: hidden to allow zooming and panning */
 }
 
 .loading {
@@ -33,7 +32,7 @@ body {
     height: 100%;
     position: relative;
     overflow-y: auto; /* Allow vertical scroll */
-    overflow-x: hidden;
+    /* Removed overflow-x: hidden to allow panning when zoomed */
     background-color: #fff;
 }
 
