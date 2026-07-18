@@ -58,7 +58,20 @@ function renderPage(num) {
             // Adjust this to shift the content vertically (Negative = Up, Positive = Down)
             const SHIFT_Y_RATIO = -0.02; // Shifts the image up by ~1cm from previous state
 
-            if (num === 2) {
+            if (num === 1) {
+                canvas.classList.add('hidden');
+                const page1Img = document.getElementById('page1-img');
+                if (page1Img) page1Img.classList.remove('hidden');
+                wrapper.style.height = 'auto';
+                container.style.backgroundColor = '#fff';
+                const contactInfo = document.getElementById('contact-info');
+                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                const bowelHeading = document.getElementById('bowel-heading');
+                if (bowelHeading) bowelHeading.classList.add('hidden');
+            } else if (num === 2) {
+                canvas.classList.remove('hidden');
+                const page1Img = document.getElementById('page1-img');
+                if (page1Img) page1Img.classList.add('hidden');
                 // Show top portion
                 wrapper.style.height = (cssHeight * CUT_RATIO) + 'px';
                 canvas.style.marginTop = '0px';
@@ -70,6 +83,10 @@ function renderPage(num) {
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
             } else if (num === 16) {
+                canvas.classList.remove('hidden');
+                const page1Img = document.getElementById('page1-img');
+                if (page1Img) page1Img.classList.add('hidden');
+                
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.remove('hidden');
 
@@ -104,6 +121,10 @@ function renderPage(num) {
                     }
                 }, 100);
             } else {
+                canvas.classList.remove('hidden');
+                const page1Img = document.getElementById('page1-img');
+                if (page1Img) page1Img.classList.add('hidden');
+                
                 wrapper.style.height = cssHeight + 'px';
                 canvas.style.marginTop = '0px';
                 canvas.style.marginLeft = '0px';
