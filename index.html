@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>대장내시경 장청결제 복용 안내</title>
-    <link rel="stylesheet" href="style.css?v=18">
+    <link rel="stylesheet" href="style.css?v=17">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
@@ -22,25 +22,6 @@
             <!-- Wrapper to keep overlays aligned with canvas -->
             <div id="canvas-wrapper">
                 <canvas id="pdf-canvas"></canvas>
-                
-                <!-- Dynamic Custom Text for page 2 -->
-                <div id="page2-text" class="page2-text hidden">
-                    <div class="p2-section">
-                        <div class="p2-title">대장내시경 전</div>
-                        <ul class="p2-list">
-                            <li><span class="check-icon">✔</span> 오메가 3는 <u>1주일간 중단</u>해야 합니다.</li>
-                            <li><span class="check-icon">✔</span> 항혈전제, 항응고제 중단날을 <strong>확인</strong>합니다.</li>
-                            <li><span class="check-icon">✔</span> 젤네일은 미리 제거하셔야 합니다.</li>
-                        </ul>
-                    </div>
-                    <div class="p2-section">
-                        <div class="p2-title">대장내시경 후</div>
-                        <ul class="p2-list">
-                            <li><span class="check-icon">✔</span> 보호자가 동반하는 것이 좋으며, <span class="text-red"><u>당일 자가운전은 제한</u>됩니다.</span></li>
-                            <li><span class="check-icon">✔</span> 용종 제거 후, <span class="text-red"><u>2주 동안</u> 비행기 탑승은 어렵습니다.</span></li>
-                        </ul>
-                    </div>
-                </div>
                 
                 <!-- Overlay for Screen 1 & 2: Click anywhere to go next -->
                 <div id="full-overlay" class="overlay hidden" onclick="goNext()">
@@ -81,7 +62,7 @@
             <!-- Button to see bowel pattern -->
             <button id="bowel-btn" class="bowel-btn hidden" onclick="showPage(8)">대변 양상 확인하기 →</button>
         </div>
-    <script src="pdf-data.js?v=18"></script>
-    <script src="app.js?v=18"></script>
+    <script src="pdf-data.js?v=17"></script>
+    <script src="app.js?v=17"></script>
 </body>
 </html>
