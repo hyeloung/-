@@ -82,11 +82,6 @@ function renderPage(num) {
                 if (contactInfo) contactInfo.style.backgroundColor = '#fff';
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
-                container.style.backgroundColor = '#fff';
-                const contactInfo = document.getElementById('contact-info');
-                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
-                const bowelHeading = document.getElementById('bowel-heading');
-                if (bowelHeading) bowelHeading.classList.add('hidden');
             } else if (num === 16) {
                 canvas.classList.remove('hidden');
                 const page1Img = document.getElementById('page1-img');
