@@ -59,13 +59,13 @@ function renderPage(num) {
             const SHIFT_Y_RATIO = -0.02; // Shifts the image up by ~1cm from previous state
 
             // Hide all custom images initially
-            const staticImages = ['page1-img', 'page2-img', 'page4-img', 'page5-img', 'page6-img', 'page8-img', 'page9-img', 'page10-img', 'page12-img', 'page13-img', 'page14-img'];
+            const staticImages = ['page1-img', 'page2-img', 'page4-img', 'page5-img', 'page6-img', 'page7-img', 'page8-img', 'page9-img', 'page10-img', 'page12-img', 'page13-img', 'page14-img'];
             staticImages.forEach(id => {
                 const img = document.getElementById(id);
                 if (img) img.classList.add('hidden');
             });
 
-            if (num === 1 || num === 2 || num === 4 || num === 5 || num === 6 || num === 8 || num === 9 || num === 10 || num === 12 || num === 13 || num === 14) {
+            if (num === 1 || num === 2 || num === 4 || num === 5 || num === 6 || num === 7 || num === 8 || num === 9 || num === 10 || num === 12 || num === 13 || num === 14) {
                 canvas.classList.add('hidden');
                 const targetImg = document.getElementById(`page${num}-img`);
                 if (targetImg) targetImg.classList.remove('hidden');
