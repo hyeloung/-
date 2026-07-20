@@ -152,3 +152,9 @@ function updateOverlays(pageObjNum) {
         if (bowelBtn) bowelBtn.classList.remove('hidden');
     }
 }
+function showPage(num) {
+    if (!pdfDoc) return;
+    currentPage = num;
+    renderPage(currentPage);
+    updateOverlays(currentPage);
+}
