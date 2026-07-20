@@ -8,6 +8,7 @@ html, body {
     width: 100%;
     height: auto;
     min-height: 100%;
+    overflow-x: hidden !important;
 }
 
 body {
@@ -201,6 +202,8 @@ body {
 /* For desktop (width > 1024px) */
 @media (min-width: 1025px) {
     .screen-img {
+        width: 150vw !important;
+        margin-left: -25vw !important;
         height: auto !important;
         object-fit: unset !important;
     }
