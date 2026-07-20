@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>대장내시경 장청결제 복용 안내</title>
-    <link rel="stylesheet" href="style.css?v=26">
+    <link rel="stylesheet" href="style.css?v=30">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
@@ -69,13 +69,45 @@
             <!-- Contact info for page 16 -->
             
 
+                <img id="page16-img" class="hidden" src="page16.jpg?v=46" style="width: 100%; height: 100vh; display: block;" alt="Page 16">
+                
+                <!-- Overlay for Screen 1 & 2: Click anywhere to go next -->
+                <div id="full-overlay" class="overlay hidden" onclick="goNext()">
+                    <div class="tap-hint" id="tap-hint-text">화면을 터치하여 다음으로 넘어가세요</div>
+                </div>
+                
+                <!-- Overlay for Screen 3: Click medicine -->
+                <div id="med-overlay" class="overlay hidden">
+                    <!-- 4 Rows x 3 Columns of medicines -->
+                    <!-- 하프렙 (Row 1) -->
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(4)"></div>
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(8)"></div>
+                    <div class="clickable-row" style="top: 32%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(12)"></div>
+                    <!-- 플렌뷰 (Row 2) -->
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(5)"></div>
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(9)"></div>
+                    <div class="clickable-row" style="top: 49%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(13)"></div>
+                    <!-- 수프렙 (Row 3) -->
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(6)"></div>
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(10)"></div>
+                    <div class="clickable-row" style="top: 66%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(14)"></div>
+                    <!-- 원프렙 (Row 4) -->
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 0%; width: 33.33%;" onclick="showPage(7)"></div>
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 33.33%; width: 33.33%;" onclick="showPage(11)"></div>
+                    <div class="clickable-row" style="top: 83%; height: 16%; left: 66.66%; width: 33.33%;" onclick="showPage(15)"></div>
+                </div>
+            </div>
+
+            <!-- Contact info for page 16 -->
+            
+
             <!-- Back button for medicine detail pages -->
             <button id="back-btn" class="back-btn hidden" onclick="showPage(3)">← 뒤로가기</button>
             
             <!-- Button to see bowel pattern -->
             <button id="bowel-btn" class="bowel-btn hidden" onclick="showPage(16)">대변 양상 확인하기 →</button>
         </div>
-    <script src="pdf-data.js?v=26"></script>
-    <script src="app.js?v=28"></script>
+    <script src="pdf-data.js?v=30"></script>
+    <script src="app.js?v=30"></script>
 </body>
 </html>

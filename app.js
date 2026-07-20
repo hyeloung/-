@@ -150,6 +150,21 @@ function updateOverlays(pageObjNum) {
     } else if (pageObjNum >= 4 && pageObjNum <= 15) {
         backBtn.classList.remove('hidden');
         if (bowelBtn) bowelBtn.classList.remove('hidden');
+    } else if (pageObjNum === 16) {
+        fullOverlay.classList.remove('hidden');
+        if (tapHintText) {
+            tapHintText.innerText = '화면을 터치하면 처음으로 돌아갑니다';
+            tapHintText.style.animation = 'none';
+            tapHintText.offsetHeight; // trigger reflow
+            tapHintText.style.animation = null;
+        }
+        if (contactInfo) contactInfo.classList.remove('hidden');
+    }
+
+    if ((pageObjNum === 1 || pageObjNum === 2) && tapHintText) {
+        tapHintText.style.animation = 'none';
+        tapHintText.offsetHeight;
+        tapHintText.style.animation = null;
     }
 }
 function showPage(num) {

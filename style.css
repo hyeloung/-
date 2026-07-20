@@ -80,15 +80,17 @@ body {
     border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
-    animation: pulse 2s infinite;
+    animation: fadeOutHint 4s forwards;
     pointer-events: none;
     z-index: 20;
     white-space: nowrap;
 }
 
-@keyframes pulse {
-    0%, 100% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(0,0,0,0); }
-    50% { opacity: 1; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+@keyframes fadeOutHint {
+    0% { opacity: 0; }
+    10% { opacity: 0.9; box-shadow: 0 0 10px rgba(0,0,0,0.5); }
+    70% { opacity: 0.9; }
+    100% { opacity: 0; display: none; pointer-events: none; }
 }
 
 .clickable-row {
@@ -126,20 +128,21 @@ body {
 
 .bowel-btn {
     position: fixed;
-    bottom: 4%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 2%;
+    right: 5%;
+    bottom: auto;
+    left: auto;
+    transform: none;
     background: #3b82f6;
     color: white;
     border: none;
-    padding: 14px 28px;
-    border-radius: 30px;
+    padding: 12px 20px;
+    border-radius: 12px;
     font-size: 1.1rem;
     font-weight: bold;
     cursor: pointer;
     z-index: 30;
-    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-    animation: bounce 2s infinite;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
     white-space: nowrap;
 }
 
