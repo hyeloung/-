@@ -193,8 +193,8 @@ body {
 /* For smartphones (width <= 768px) */
 @media (max-width: 768px) {
     .screen-img {
-        height: 100vh;
-        object-fit: fill;
+        width: 100%;
+        /* Let JS handle height in pixels to preserve mobile zooming */
     }
 }
 
