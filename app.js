@@ -71,8 +71,7 @@ function renderPage(num) {
                 if (targetImg) targetImg.classList.remove('hidden');
                 wrapper.style.height = 'auto';
                 container.style.backgroundColor = '#fff';
-                const contactInfo = document.getElementById('contact-info');
-                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
             } else if (num === 16) {
@@ -118,8 +117,7 @@ function renderPage(num) {
                 canvas.style.marginLeft = '0px';
                 canvas.style.width = '100%';
                 container.style.backgroundColor = '#fff';
-                const contactInfo = document.getElementById('contact-info');
-                if (contactInfo) contactInfo.style.backgroundColor = '#fff';
+                
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
             }
