@@ -65,12 +65,24 @@ function renderPage(num) {
                 if (img) img.classList.add('hidden');
             });
 
-            if (num === 1 || num === 2 || num === 3 || num === 4 || num === 5 || num === 6 || num === 7 || num === 8 || num === 9 || num === 10 || num === 11 || num === 12 || num === 13 || num === 14 || num === 15 || num === 16) {
+            if (num >= 1 && num <= 16) {
                 canvas.classList.add('hidden');
                 const targetImg = document.getElementById(`page${num}-img`);
-                if (targetImg) targetImg.classList.remove('hidden');
+                if (targetImg) {
+                    targetImg.classList.remove('hidden');
+                    // On mobile (<= 1024px), explicitly set height in pixels instead of CSS vh to prevent zooming issues
+                    if (window.innerWidth <= 1024) {
+                        targetImg.style.height = window.innerHeight + 'px';
+                        targetImg.style.objectFit = 'fill';
+                    } else {
+                        targetImg.style.height = '100vh';
+                        targetImg.style.width = 'auto';
+                        targetImg.style.margin = '0 auto';
+                        targetImg.style.objectFit = 'contain';
+                    }
+                }
                 wrapper.style.height = 'auto';
-                container.style.backgroundColor = '#fff';
+                container.style.backgroundColor = '#000';
                 
                 const bowelHeading = document.getElementById('bowel-heading');
                 if (bowelHeading) bowelHeading.classList.add('hidden');
