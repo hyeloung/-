@@ -183,3 +183,24 @@ body {
     text-decoration: none;
     font-weight: 800;
 }
+
+/* Default for all screen-img */
+.screen-img {
+    width: 100%;
+    display: block;
+}
+
+/* For smartphones (width <= 768px) */
+@media (max-width: 768px) {
+    .screen-img {
+        height: 100vh;
+        object-fit: fill;
+    }
+}
+
+/* For desktop (width > 768px) */
+@media (min-width: 769px) {
+    .screen-img {
+        height: auto;
+    }
+}
