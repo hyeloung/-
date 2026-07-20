@@ -190,17 +190,17 @@ body {
     display: block;
 }
 
-/* For smartphones (width <= 768px) */
-@media (max-width: 768px) {
+/* For smartphones (width <= 1024px) */
+@media (max-width: 1024px) {
     .screen-img {
-        width: 100%;
-        /* Let JS handle height in pixels to preserve mobile zooming */
+        height: 100vh !important;
+        object-fit: fill !important;
     }
 }
 
-/* For desktop (width > 768px) */
-@media (min-width: 769px) {
+/* For desktop (width > 1024px) */
+@media (min-width: 1025px) {
     .screen-img {
-        height: auto;
+        height: auto !important;
     }
 }
