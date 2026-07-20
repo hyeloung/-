@@ -43,7 +43,7 @@ body {
 #canvas-wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    /* overflow: hidden; removed for zooming */
 }
 
 #pdf-canvas {
