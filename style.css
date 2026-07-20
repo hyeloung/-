@@ -186,21 +186,8 @@ body {
 
 /* Default for all screen-img */
 .screen-img {
-    width: 100%;
+    width: 100vw;
+    height: 100vh !important;
+    object-fit: fill !important;
     display: block;
-}
-
-/* For smartphones (width <= 1024px) */
-@media (max-width: 1024px) {
-    .screen-img {
-        height: 100vh !important;
-        object-fit: fill !important;
-    }
-}
-
-/* For desktop (width > 1024px) */
-@media (min-width: 1025px) {
-    .screen-img {
-        height: auto !important;
-    }
 }
