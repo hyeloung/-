@@ -158,3 +158,14 @@ function showPage(num) {
     renderPage(currentPage);
     updateOverlays(currentPage);
 }
+function goNext() {
+    if (currentPage === 1) {
+        showPage(2);
+    } else if (currentPage === 2) {
+        showPage(3);
+    } else if (currentPage >= 4 && currentPage <= 15) {
+        showPage(16);
+    } else if (currentPage === 16) {
+        showPage(1);
+    }
+}
