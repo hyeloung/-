@@ -191,3 +191,11 @@ body {
     height: auto !important;
     display: block;
 }
+
+/* For smartphones */
+@media (max-width: 1024px) {
+    .screen-img {
+        height: 100vh !important;
+        object-fit: fill !important;
+    }
+}
